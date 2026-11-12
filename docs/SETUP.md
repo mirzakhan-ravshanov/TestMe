@@ -28,17 +28,17 @@ User roles and Pro expiry are stored in PostgreSQL and checked on every protecte
 
 ## Implemented
 
-- Dark responsive Dashboard, Learn, Practice, Class, Tournament and Arcade navigation with the approved logo.
+- Responsive Dashboard, Learn, Practice, Class, Tournament and Arcade navigation, with light/dark themes and persisted theme preference.
 - Free/Pro courses and modules across maths, physics and English; video URL playback (YouTube or direct HTTPS video), text lessons and persisted completion.
 - Server-held answer keys, timed attempts, automatic scoring, result review, replay prevention and assignment linkage.
 - Teacher class creation with six-character cryptographic codes, joins, membership-checked text chat refreshed every five seconds, assignments/deadlines, teacher grading 2–5 and diary.
 - Teacher and learner grade notifications, course/module/test/user/settings administration, configurable Pro price and external payment link.
-- Three authentication code paths; live provider configuration is still required.
+- Three authentication code paths, redesigned signup/login/recovery screens, password confirmation/visibility, callback handling and provider availability states; live provider configuration is still required.
 - Arithmetic Arcade game; tournament creation/registration.
 
 ## Remaining production work
 
-This is a working v2 foundation, not the entirety of the earlier long-term specification. Live authentication and production database have not been exercised without account configuration. No live site was deployed in this rebuild.
+This is a working v2 foundation, not the entirety of the earlier long-term specification. The site is available at https://mirzaxon.netlify.app and its public bootstrap endpoint has been checked against the deployed database. Live authentication still requires provider configuration and end-to-end verification with real accounts. See [MASTER_PROMPT.md](MASTER_PROMPT.md) for the full target specification; it includes features that remain to be implemented.
 
 - Courses contain sample text; real instructional videos and licensed content must be entered by the administrator.
 - Admin content editing currently uses a JSON editor; dedicated course, question, upload and layout forms remain to be built.

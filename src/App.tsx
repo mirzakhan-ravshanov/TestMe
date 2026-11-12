@@ -20,6 +20,7 @@ import LearnPage from "./pages/LearnPage";
 import PracticePage from "./pages/PracticePage";
 import ClassPage from "./pages/ClassPage";
 import AdminPage from "./pages/AdminPage";
+import { ThemeToggle } from "./theme";
 const menu = [
   ["dashboard", "Dashboard", LayoutDashboard],
   ["learn", "Learn", BookOpen],
@@ -29,7 +30,7 @@ const menu = [
   ["arcade", "Arcade", Gamepad2],
 ] as const;
 export default function App() {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading, signOut, authError, callback } = useAuth();
   const [route, setRoute] = useState(location.hash.slice(1) || "dashboard"),
     [data, setData] = useState<any>({
       courses: [],
@@ -62,10 +63,17 @@ export default function App() {
   useEffect(() => {
     if (!loading) void refresh();
   }, [loading, user?.id]);
-  if (page === "auth") return <AuthPage />;
+  if (page === "auth" || callback) return <AuthPage />;
   const props = { data, onRefresh: refresh };
   return (
     <div className="app-shell">
+      {open && (
+        <button
+          className="sidebar-scrim"
+          aria-label="Menyuni yopish"
+          onClick={() => setOpen(false)}
+        />
+      )}
       <aside className={"sidebar " + (open ? "is-open" : "")}>
         <a href="#dashboard" className="brand">
           <img src="/assets/testme-logo.png" alt="TestMe" />
@@ -115,6 +123,7 @@ export default function App() {
             O‘quv maydoni / <b>{page}</b>
           </span>
           <div className="row">
+            <ThemeToggle />
             {user ? (
               <>
                 <button
@@ -134,7 +143,9 @@ export default function App() {
                 {user.name}
                 <button
                   className="btn"
-                  onClick={() => void signOut()}
+                  onClick={() =>
+                    void signOut().catch((e) => setError(e.message))
+                  }
                   aria-label="Chiqish"
                 >
                   <LogOut size={16} />
@@ -148,6 +159,11 @@ export default function App() {
           </div>
         </header>
         <main>
+          {authError && (
+            <p className="notice" role="alert">
+              {authError}
+            </p>
+          )}
           {error && (
             <p className="notice">
               Serverga ulanish amalga oshmadi.{" "}
