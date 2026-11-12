@@ -1,6 +1,9 @@
 [build]
-  command = "mkdir -p dist/assets && cp index.html app.js style.css brand.css dist/ && cp assets/testme-logo.png assets/favicon.png dist/assets/"
+  command = "npm run build"
   publish = "dist"
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"

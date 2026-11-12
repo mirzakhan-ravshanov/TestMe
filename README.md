@@ -1,36 +1,23 @@
-# TestMe
+# TestMe v2
 
-O‘zbek tilidagi kurslar va testlar platformasining ishlaydigan dastlabki prototipi.
+O‘zbekcha ta’lim platformasi: matematika, fizika va ingliz tili. React + TypeScript + Vite, Netlify Functions, Netlify Identity va PostgreSQL.
 
 ## Ishga tushirish
 
-Python 3 bilan:
-
 ```sh
-python3 -m http.server 8000
+npm ci
+npx tsx scripts/dev-server.ts
+# Ikkinchi terminalda:
+npm run dev
 ```
 
-Brauzerda http://localhost:8000 ni oching. Build yoki paket o‘rnatish talab qilinmaydi.
+```sh
+npm run build
+npm test
+```
 
-## Imkoniyatlar
+Dashboard, Learn, Practice, Class, Tournament va Arcade. Bepul/Pro kontent, serverda test baholash, sinf kodi, vazifa, chat va kundalik. Kirish: Google, email/parol va @testmeauthbot orqali.
 
-- Moslashuvchan bosh sahifa va shaxsiy statistika
-- Dasturlash, ingliz tili va matematika bo‘yicha 9 ta matnli dars
-- Kurslarni nomi va yo‘nalishi bo‘yicha qidirish
-- Darslarni tugatish va kurs rivojlanishini kuzatish
-- Har bir kurs uchun 5 daqiqalik, 3 savolli test
-- Avtomatik baholash va urinishlar tarixi
-- Brauzer localStorage xotirasida rivojlanish va natijalarni saqlash
-- TestMe orbital logosi va favicon
+Jonli auth uchun Netlify Identity yoqilishi va Telegram bot maxfiy sozlamalari kiritilishi kerak. Videolar namunaviy matnlar o‘rniga admin tomonidan qo‘shiladi. Bu qayta qurilgan v2 asosidir; to‘lov avtomatizatsiyasi va ayrim ilg‘or funksiyalar hali tayyor emas.
 
-## Chegaralar
-
-Bu frontend prototip. Hisoblar, autentifikatsiya, server, ma’lumotlar bazasi, video yuklash va o‘qituvchi/admin paneli hali yo‘q. Natijalar faqat shu brauzerda saqlanadi; brauzer ma’lumotlari o‘chirilsa yo‘qoladi. Savollar va to‘g‘ri javoblar klient kodida ochiq: haqiqiy imtihonlar uchun serverda tekshirish kerak. Kurs materiallari namuna uchun. Google Fonts ulanmasa tizim shrifti ishlatiladi.
-
-Keyingi bosqich: foydalanuvchi rollari (o‘quvchi, o‘qituvchi, administrator), server va PostgreSQL, kurslarni boshqarish, server orqali test baholash.
-
-## Netlify demo
-
-Netlify’da GitHub orqali `mirzakhan-ravshanov/TestMe` repozitoriysini ulang va `main` branchni tanlang. `netlify.toml` build va publish sozlamalarini avtomatik belgilaydi. Build faqat uchta sayt faylini `dist/` ga ko‘chiradi; ishchi fayllar va repozitoriy metama’lumotlari nashr qilinmaydi.
-
-Bir bosishda boshlash: https://app.netlify.com/start/deploy?repository=https://github.com/mirzakhan-ravshanov/TestMe
+To‘liq sozlash tartibi, bajarilgan va qolgan funksiyalar: [docs/SETUP.md](docs/SETUP.md).
