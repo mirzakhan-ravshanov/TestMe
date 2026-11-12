@@ -27,3 +27,9 @@ Brauzerda http://localhost:8000 ni oching. Build yoki paket o‘rnatish talab qi
 Bu frontend prototip. Hisoblar, autentifikatsiya, server, ma’lumotlar bazasi, video yuklash va o‘qituvchi/admin paneli hali yo‘q. Natijalar faqat shu brauzerda saqlanadi; brauzer ma’lumotlari o‘chirilsa yo‘qoladi. Savollar va to‘g‘ri javoblar klient kodida ochiq: haqiqiy imtihonlar uchun serverda tekshirish kerak. Kurs materiallari namuna uchun. Google Fonts ulanmasa tizim shrifti ishlatiladi.
 
 Keyingi bosqich: foydalanuvchi rollari (o‘quvchi, o‘qituvchi, administrator), server va PostgreSQL, kurslarni boshqarish, server orqali test baholash.
+
+## Netlify demo
+
+Netlify’da GitHub orqali `mirzakhan-ravshanov/TestMe` repozitoriysini ulang va `main` branchni tanlang. `netlify.toml` build va publish sozlamalarini avtomatik belgilaydi. Build faqat uchta sayt faylini `dist/` ga ko‘chiradi; ishchi fayllar va repozitoriy metama’lumotlari nashr qilinmaydi.
+
+Bir bosishda boshlash: https://app.netlify.com/start/deploy?repository=https://github.com/mirzakhan-ravshanov/TestMe
