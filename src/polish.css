@@ -1,4 +1,8 @@
 :root {
+  --radius-card: 32px;
+  --radius-feature: 40px;
+  --radius-control: 20px;
+  --radius-pill: 999px;
   --canvas: #121419;
   --surface: #1b1e25;
   --surface-raised: #23262f;
@@ -889,4 +893,69 @@ select {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Shared rounded surfaces in both themes, including narrow layouts. */
+.panel,
+.subject,
+.category-choice,
+.course-card,
+.module-card,
+.learning-empty,
+.lesson-list,
+.quiz-card,
+.quiz-confirm-card,
+.result-summary {
+  border-radius: var(--radius-card);
+}
+.hero,
+.auth-form-card,
+.course-lock {
+  border-radius: var(--radius-feature);
+}
+.pro-card,
+.knowledge-chip,
+.lesson-player,
+.test-row,
+.review-item,
+.tournament-art,
+.telegram-confirm {
+  border-radius: 24px;
+}
+input,
+select,
+textarea,
+.field input,
+.field select,
+.field textarea,
+.grade-form select,
+.admin-toolbar input,
+.input-shell,
+.learning-search,
+.notice,
+.inline-error,
+.learning-message,
+.auth-feedback,
+.quiz-options button,
+.arcade-options button,
+.sidebar nav a {
+  border-radius: var(--radius-control);
+}
+.btn,
+.theme-toggle,
+.tabs button,
+.subject-tabs button,
+.provider-button,
+.auth-submit,
+.auth-segments,
+.auth-segments button,
+.badge,
+.code-copy {
+  border-radius: var(--radius-pill);
+}
+.chat-message {
+  border-radius: 24px 24px 24px 8px;
+}
+.chat-message.mine {
+  border-radius: 24px 24px 8px 24px;
 }
