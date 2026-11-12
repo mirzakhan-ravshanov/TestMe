@@ -21,6 +21,7 @@ Brauzerda http://localhost:8000 ni oching. Build yoki paket o‘rnatish talab qi
 - Har bir kurs uchun 5 daqiqalik, 3 savolli test
 - Avtomatik baholash va urinishlar tarixi
 - Brauzer localStorage xotirasida rivojlanish va natijalarni saqlash
+- TestMe orbital logosi va favicon
 
 ## Chegaralar
 
